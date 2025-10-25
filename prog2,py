@@ -1,0 +1,41 @@
+# ===============================
+# Aplikasi Class, Variabel, dan Instance Variabel
+# ===============================
+
+# Membuat Class (Blueprint)
+class SepedaMotor:
+
+    # Variabel Kelas (Class Variable)
+    jenis_kendaraan = "Sepeda Motor"
+
+    # Konstruktor dengan Instance Variable
+    def __init__(self, merk, model, cc, tahun, warna, surat):
+        # Instance Variables → berlaku untuk setiap objek
+        self.merk = merk
+        self.model = model
+        self.cc = cc
+        self.tahun = tahun
+        self.warna = warna
+        self.surat = surat
+
+    # Method untuk menampilkan informasi motor
+    def tampilkan_info(self):
+        print(f"Jenis Kendaraan : {SepedaMotor.jenis_kendaraan}")
+        print(f"Merk            : {self.merk}")
+        print(f"Model           : {self.model}")
+        print(f"Kapasitas Mesin : {self.cc} cc")
+        print(f"Tahun Produksi  : {self.tahun}")
+        print(f"Warna           : {self.warna}")
+        print(f"Surat Dimiliki  : {', '.join(self.surat)}")
+        print("-" * 40)
+
+# Membuat Object (Instance) dari Class SepedaMotor
+motor1 = SepedaMotor("Honda", "Beat", 110, 2022, "Merah", ["STNK", "BPKB", "Asuransi"])
+motor2 = SepedaMotor("Yamaha", "Mio", 125, 2021, "Hitam", ["STNK", "BPKB"])
+motor3 = SepedaMotor("Suzuki", "Nex II", 115, 2020, "Biru", ["STNK"])
+
+# Menampilkan Data Objek
+print("=== DAFTAR DATA SEPEDA MOTOR ===")
+motor1.tampilkan_info()
+motor2.tampilkan_info()
+motor3.tampilkan_info()
