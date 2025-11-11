@@ -1,0 +1,42 @@
+# Kelas induk
+class Orang:
+    def _init_(self, nama, usia):
+        self.nama = nama
+        self.usia = usia
+
+# Kelas turunan Dosen
+class Dosen(Orang):
+    def _init_(self, nama, usia, nidn, mata_kuliah):
+        super()._init_(nama, usia)
+        self.nidn = nidn
+        self.mata_kuliah = mata_kuliah
+
+    def mengajar(self):
+        print(f"{self.nama} sedang mengajar {self.mata_kuliah}.")
+
+# Kelas turunan Mahasiswa
+class Mahasiswa(Orang):
+    def _init_(self, nama, usia, nim, jurusan):
+        super()._init_(nama, usia)
+        self.nim = nim
+        self.jurusan = jurusan
+
+    def belajar(self):
+        print(f"{self.nama} sedang belajar di jurusan {self.jurusan}.")
+
+# Membuat objek dari kelas Dosen
+dosen1 = Dosen("Edy", 17, 123456, "Pemrograman Berorientasi Objek")
+print("=== Data Dosen ===")
+print(f"Nama: {dosen1.nama}")
+print(f"Usia: {dosen1.usia}")
+print(f"NIDN: {dosen1.nidn}")
+print(f"Mata Kuliah: {dosen1.mata_kuliah}")
+dosen1.mengajar()
+
+print("\n=== Data Mahasiswa ===")
+mahasiswa1 = Mahasiswa("Andi Setiawan", 20, "24241127", "Pendidikan Teknologi Informasi")
+print(f"Nama: {mahasiswa1.nama}")
+print(f"Usia: {mahasiswa1.usia}")
+print(f"NIM: {mahasiswa1.nim}")
+print(f"Jurusan: {mahasiswa1.jurusan}")
+mahasiswa1.belajar()
