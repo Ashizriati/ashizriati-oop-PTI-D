@@ -1,0 +1,44 @@
+class Person:
+    def _init_(self, name, age):
+        self.name = name
+        self.age = age
+
+    def info(self):
+        return f"Nama : {self.name}\nUmur : {self.age}"
+
+
+class Lecturer(Person):
+    def _init_(self, name, age, nidn, course):
+        super()._init_(name, age)
+        self.nidn = nidn
+        self.course = course
+
+    def info(self):
+        return f"{super().info()}\nNIDN : {self.nidn}\nMengajar : {self.course}"
+
+
+class Student(Person):
+    def _init_(self, name, age, nim, major):
+        super()._init_(name, age)
+        self.nim = nim
+        self.major = major
+
+    def info(self):
+        return f"{super().info()}\nNIM : {self.nim}\nJurusan : {self.major}"
+
+
+lecturers = []
+students = []
+
+lecturers.append(Lecturer("Edy", 30, "0823129103", "Pemrograman Beroriontasi Objek"))
+students.append(Student("ashizriati", 18, "24241115", "Teknologi Informasi"))
+
+print("=== DATA DOSEN ===")
+for d in lecturers:
+    print(d.info())
+    print("-" * 30)
+
+print("\n=== DATA MAHASISWA ===")
+for m in students:
+    print(m.info())
+    print("-" * 18)
