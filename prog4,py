@@ -1,0 +1,59 @@
+# =======================
+# Parent Class
+# =======================
+class Mahasiswa:
+    def _init_(self, nama):
+        self.nama = nama
+
+class MhsAlumni(Mahasiswa):
+    def _init_(self, nama, lulus_tahun):
+        super()._init_(nama)
+        self.lulus_tahun = lulus_tahun
+
+class MhsAktif(Mahasiswa):
+    def _init_(self, nama, masuk_tahun):
+        super()._init_(nama)
+        self.masuk_tahun = masuk_tahun
+
+
+# =======================
+# Child Classes
+# =======================
+class KTM(MhsAktif):
+    def _init_(self, nama, masuk_tahun, nomor_ktm):
+        super()._init_(nama, masuk_tahun)
+        self.nomor_ktm = nomor_ktm
+
+
+class Ijazah(MhsAlumni):
+    def _init_(self, nama, lulus_tahun, nomor_ijazah):
+        super()._init_(nama, lulus_tahun)
+        self.nomor_ijazah = nomor_ijazah
+
+
+class Beasiswa(MhsAktif):
+    def _init_(self, nama, masuk_tahun, jenis_beasiswa):
+        super()._init_(nama, masuk_tahun)
+        self.jenis_beasiswa = jenis_beasiswa
+
+
+# Membuat objek
+ktm1 = KTM("Budi", 2024, "KTM123")
+ijazah1 = Ijazah("Ani", 2025, "IJZ987")
+beasiswa1 = Beasiswa("Deni", 2024, "Beasiswa Unggulan")
+
+# Output
+print("=== Data KTM ===")
+print("Nama :", ktm1.nama)
+print("Masuk Tahun :", ktm1.masuk_tahun)
+print("Nomor KTM :", ktm1.nomor_ktm)
+
+print("\n=== Data Ijazah ===")
+print("Nama :", ijazah1.nama)
+print("Lulus Tahun :", ijazah1.lulus_tahun)
+print("Nomor Ijazah :", ijazah1.nomor_ijazah)
+
+print("\n=== Data Beasiswa ===")
+print("Nama :", beasiswa1.nama)
+print("Masuk Tahun :", beasiswa1.masuk_tahun)
+print("Jenis Beasiswa :", beasiswa1.jenis_beasiswa)
